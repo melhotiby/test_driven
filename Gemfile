@@ -1,10 +1,6 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
-
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
-
 gem 'mysql2'
 
 
@@ -26,11 +22,12 @@ end
 
 group :test do
   gem 'rspec', '2.8.0'
+  gem 'rspec-rails', '2.8.1'
 	gem 'webrat', '0.7.3'
 end
 
 gem 'jquery-rails'
-
+gem "haml", "~> 3.1.4"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
