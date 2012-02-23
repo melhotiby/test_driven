@@ -19,12 +19,12 @@ describe PagesController do
   describe "Contact page" do
 
     it "should have the h1 'Contact Page h1'" do
-      visit '/pages/contact'
+      visit contact_path
       page.should have_selector('h1', :text => 'Contact Page h1')
     end
 
     it "should have the title 'Contact Page'" do
-      visit '/pages/contact'
+      visit contact_path
       page.should have_selector('title', :text => 'Matts cool website | Contact Page')
     end
   end
@@ -32,12 +32,12 @@ describe PagesController do
   describe "About page" do
 
     it "should have the h1 'About Page h1'" do
-      visit '/pages/about'
+      visit about_path
       page.should have_selector('h1', :text => 'About Page h1')
     end
 
     it "should have the title 'About Page'" do
-      visit '/pages/about'
+      visit about_path
       page.should have_selector('title', :text => 'Matts cool website | About Page')
     end
   end
