@@ -1,49 +1,44 @@
 require 'spec_helper'
 
 describe PagesController do
-    render_views  
+  render_views
 
-  describe "GET 'home'" do
-        
-    it "returns http success" do
-      get 'home'
-      response.should be_success
-    end
-    
-    it "should have the right title" do
-      get 'home'
-      response.should have_selector 'title', :content => 'Home Page'
-    end
-    
-    it "should render template" do
-      get 'home'
-      response.should render_template('pages/home')
-    end
-    
-  end
+  describe "Home page" do
 
-  describe "GET 'contact'" do
-    it "returns http success" do
-      get 'contact'
-      response.should be_success
+    it "should have the h1 'Home Page h1'" do
+      visit root_path
+      page.should have_selector('h1', :text => 'Home Page h1')
     end
-    
-    it "should have the right title" do
-      get 'contact'
-      response.should have_selector 'title', :content => 'Contact Page'
-    end
-  end
-  
-  describe "GET 'about'" do
-    it "returns http success" do
-      get 'about'
-      response.should be_success
-    end
-    
-    it "should have the right title" do
-      get 'about'
-      response.should have_selector 'title', :content => 'About Page'
+
+    it "should have the title 'Home Page'" do
+      visit root_path
+      page.should have_selector('title', :text => "Matts cool website | Home Page")
     end
   end
 
+  describe "Contact page" do
+
+    it "should have the h1 'Contact Page h1'" do
+      visit '/pages/contact'
+      page.should have_selector('h1', :text => 'Contact Page h1')
+    end
+
+    it "should have the title 'Contact Page'" do
+      visit '/pages/contact'
+      page.should have_selector('title', :text => 'Matts cool website | Contact Page')
+    end
+  end
+
+  describe "About page" do
+
+    it "should have the h1 'About Page h1'" do
+      visit '/pages/about'
+      page.should have_selector('h1', :text => 'About Page h1')
+    end
+
+    it "should have the title 'About Page'" do
+      visit '/pages/about'
+      page.should have_selector('title', :text => 'Matts cool website | About Page')
+    end
+  end
 end

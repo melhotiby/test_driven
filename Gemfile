@@ -4,29 +4,26 @@ gem 'rails', '3.2.1'
 gem 'mysql2'
 
 
+group :development do
+  gem 'rspec-rails', '2.8.1'
+  gem 'guard-rspec', '0.5.5'
+end
+
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer'
-
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails',   '3.2.3'
+  gem 'coffee-rails', '3.2.2'
+  gem 'uglifier', '1.2.3'
 end
 
-group :development do
-  gem 'rspec-rails', '2.8.1'
-end
+gem 'jquery-rails', '2.0.0'
 
 group :test do
-  gem 'rspec', '2.8.0'
   gem 'rspec-rails', '2.8.1'
-	gem 'webrat', '0.7.3'
+  gem 'capybara', '1.1.2'
 end
 
-gem 'jquery-rails'
 gem "haml", "~> 3.1.4"
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

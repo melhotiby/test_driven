@@ -1,9 +1,13 @@
 !!!
-%html{ :xmlns => "http://www.w3.org/1999/xhtml", 'xml:lang'=>"en", :lang=>"en" }
+%html
   %head
-    %title= "#{@title} Page"
-    = stylesheet_link_tag    "application", :media => "all"
+    %title= "#{full_title(yield(:title))} Page" 
+    = csrf_meta_tag
+    = render 'layouts/stylesheets'
     = javascript_include_tag "application"
-    = csrf_meta_tags
   %body
-    = yield
+    .container
+      = render 'layouts/header'
+      %section.round
+        = yield
+      = render 'layouts/footer'

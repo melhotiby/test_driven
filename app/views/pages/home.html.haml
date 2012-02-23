@@ -1,4 +1,9 @@
-%h1="Pages#home"
+- provide(:title, 'Home Page')
+%h1="Home Page h1"
 %p
-  Find me in app/views/pages/home.html
+  This is the home page for the
+  = link_to "My Site", "http://google.com"
+  sample application.
+
+= link_to "Sign up now!", '#', class: "signup_button round"
 
