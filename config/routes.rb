@@ -1,5 +1,5 @@
 TestDriven::Application.routes.draw do
-  get "users/new"
+  resources :users
 
   match '/home',    to: 'pages#home'
   match '/about',   to: 'pages#about'
