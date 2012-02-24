@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.1'
 gem 'mysql2'
-
+gem "haml-rails"
 
 group :development do
   gem 'rspec-rails', '2.8.1'

@@ -1,7 +1,7 @@
 !!!
 %html
   %head
-    %title= "#{full_title(yield(:title))} Page" 
+    %title= "#{full_title(yield(:title))}" 
     = csrf_meta_tag
     = render 'layouts/stylesheets'
     = javascript_include_tag "application"
