@@ -16,5 +16,5 @@ class User < ActiveRecord::Base
   validates :name,  presence: true, length: { maximum: 50 }
   valid_email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true, format: { with: valid_email_regex }, uniqueness: { case_sensitive: false }
-  validates :password, length: { minimum: 6 }
+  validates :password, length: { minimum: 6 }# , :presence => { :message => "cant be blank!" }
 end
