@@ -31,7 +31,6 @@ describe "User pages" do
         before { click_button "Sign up" }
         it { should have_selector('title', :text => "Matt Elhotiby") }
         it { should have_selector('.flash', :text => "Welcome to the Sample App!") }
-        
       end
     end
     
