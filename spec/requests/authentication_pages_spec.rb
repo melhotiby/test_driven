@@ -18,8 +18,6 @@ describe "Authentication" do
       end      
     end
     
-    
-    
     describe "with valid login" do
       let(:user) { FactoryGirl.create(:user) }
       before { valid_signin(user) }
