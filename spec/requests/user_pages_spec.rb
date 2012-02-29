@@ -27,6 +27,12 @@ describe "User pages" do
         expect { click_button "Sign up" }.to change(User, :count)
       end
       
+      describe "after saving the user" do
+        before { click_button "Sign up" }
+        it { should_not have_link('Sign in') }
+        it { should have_link('Sign out') }
+      end
+      
       describe "with valid information" do
         before { click_button "Sign up" }
         it { should have_selector('title', :text => "Matt Elhotiby") }
