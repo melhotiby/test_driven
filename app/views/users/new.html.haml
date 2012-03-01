@@ -1,22 +1,6 @@
 - provide(:title, 'Signup Page')
 %h1="Signup Page h1"
 = form_for(@user) do |f|
-  = render 'shared/error_messages'
-  .field
-    = f.label :name
-    %br
-    = f.text_field :name
-  .field
-    = f.label :email
-    %br
-    = f.text_field :email
-  .field
-    = f.label :password
-    %br
-    = f.password_field :password
-  .field
-    = f.label :password_confirmation, "Confirmation"
-    %br
-    = f.password_field :password_confirmation
+  = render :partial => 'form', :locals => { :f => f }
   .actions
     = f.submit "Sign up"
