@@ -1,7 +1,8 @@
 TestDriven::Application.routes.draw do
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
-
+  resources :microposts, only: [:create, :destroy]
+  
   match '/signup',  to: 'users#new'
   match '/signin',  to: 'sessions#new'
   match '/signout', to: 'sessions#destroy', via: :delete
@@ -9,9 +10,7 @@ TestDriven::Application.routes.draw do
   match '/home',    to: 'pages#home'
   match '/about',   to: 'pages#about'
   match '/contact', to: 'pages#contact'
-  match '/help', to: 'pages#help'
-  match '/signup', to: 'users#new'
-  
+  match '/help', to: 'pages#help'  
   root :to => 'pages#home'
   
 end

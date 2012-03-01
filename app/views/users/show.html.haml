@@ -5,9 +5,15 @@
       %h1
         = gravatar_for @user
         = @user.name
+    - if @user.microposts.any?
+      %table.microposts
+        = render @microposts
+      = will_paginate @microposts
     %td.sidebar.round
       %strong Name
       = @user.name
       %br
       %strong URL
       = link_to user_path(@user), @user
+      %strong Microposts
+      = @user.microposts.count

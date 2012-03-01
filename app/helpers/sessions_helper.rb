@@ -9,6 +9,11 @@ module SessionsHelper
     @current_user ||= user_from_remember_token
   end
   
+  def signed_in_user
+    store_location
+    redirect_to signin_path, notice: "Please sign in." unless signed_in?
+  end
+  
   def current_user?(user)
     user == current_user
   end
