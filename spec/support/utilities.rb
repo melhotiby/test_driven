@@ -26,6 +26,10 @@ def sign_in(user)
   cookies[:remember_token] = user.remember_token
 end
 
+def sign_out(user)
+  visit signout_path
+end
+
 
 RSpec::Matchers.define :have_error_message do |message|
   match do |page|
