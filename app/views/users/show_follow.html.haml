@@ -1,0 +1,23 @@
+%table
+  %tr
+    %td.main
+      %h1= @title
+      - if @users.any?
+        %ul.users
+          = render @users 
+        = will_paginate @users 
+    %td.sidebar.round
+      %strong 
+        Name
+        = @user.name
+      %strong 
+        URL
+        = link_to user_path(@user), @user
+        %br
+      %strong 
+        Microposts
+        = @user.microposts.count
+      = render 'shared/stats'
+      - unless @users.empty?
+        - @users.each do |user|
+          = link_to gravatar_for(user, size: 30), user

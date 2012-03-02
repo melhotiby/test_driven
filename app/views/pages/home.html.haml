@@ -7,13 +7,13 @@
         = render 'shared/micropost_form'
         = render 'shared/feed'
       %td.sidebar.round
-        = render 'shared/user_info' 
-
-%h1="Home Page h1"
-%p
-  This is the home page for the
-  = link_to "My Site", "http://google.com"
-  sample application.
-
-= link_to "Sign up now!", signup_path, class: "signup_button round"
+        = render 'shared/user_info'
+        = render 'shared/stats'
+- else
+  %h1="Home Page h1"
+  %p
+    This is the home page for the
+    = link_to "My Site", "http://google.com"
+    sample application.
+  = link_to "Sign up now!", signup_path, class: "signup_button round"
 
